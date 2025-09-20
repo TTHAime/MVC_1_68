@@ -42,15 +42,6 @@
 - **RewardTierDAO.java**: Reward tier data access
 - **PledgeDAO.java**: Pledge data access
 
-## Sample Data
-
-The system includes comprehensive sample data:
-
-- **9 projects** across 5 categories
-- **12 users** (including admin account)
-- **27 reward tiers** (2-3 per project)
-- **46 pledges** (40 successful + 6 rejected) demonstrating business rules
-
 ## Business Rules Implemented
 
 1. **Project ID**: 8-digit number, first digit cannot be 0
