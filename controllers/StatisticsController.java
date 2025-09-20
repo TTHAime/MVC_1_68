@@ -96,6 +96,8 @@ public class StatisticsController {
         private double averagePledgeAmount;
         private int activeProjects;
         private int completedProjects;
+        private int successfulProjects; // Projects that reached their goal
+        private int failedProjects; // Projects that failed
 
         public SystemStatistics(List<Pledge> pledges, List<Project> projects, List<User> users) {
             this.totalProjects = projects.size();
@@ -110,6 +112,11 @@ public class StatisticsController {
             this.averagePledgeAmount = successfulPledges > 0 ? totalAmountRaised / successfulPledges : 0;
             this.activeProjects = (int) projects.stream().filter(Project::isActive).count();
             this.completedProjects = totalProjects - activeProjects;
+
+            // Calculate successful and failed projects
+            this.successfulProjects = (int) projects.stream().filter(Project::isFundingGoalReached).count();
+            this.failedProjects = (int) projects.stream()
+                    .filter(p -> !p.isActive() && !p.isFundingGoalReached()).count();
         }
 
         // Getters
@@ -151,6 +158,18 @@ public class StatisticsController {
 
         public double getSuccessRate() {
             return totalPledges > 0 ? (double) successfulPledges / totalPledges * 100 : 0;
+        }
+
+        public int getSuccessfulProjects() {
+            return successfulProjects;
+        }
+
+        public int getFailedProjects() {
+            return failedProjects;
+        }
+
+        public double getProjectSuccessRate() {
+            return totalProjects > 0 ? (double) successfulProjects / totalProjects * 100 : 0;
         }
     }
 

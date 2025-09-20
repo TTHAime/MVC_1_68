@@ -26,6 +26,9 @@ public class StatisticsView extends JFrame {
     private JLabel totalRaisedLabel;
     private JLabel averagePledgeLabel;
     private JLabel successRateLabel;
+    private JLabel successfulProjectsLabel; // Successful projects
+    private JLabel failedProjectsLabel; // Failed projects
+    private JLabel projectSuccessRateLabel; // Project success rate
 
     // Tables for detailed statistics
     private JTable projectPerformanceTable;
@@ -60,9 +63,13 @@ public class StatisticsView extends JFrame {
         totalRaisedLabel = new JLabel("$0.00");
         averagePledgeLabel = new JLabel("$0.00");
         successRateLabel = new JLabel("0%");
+        successfulProjectsLabel = new JLabel("0");
+        failedProjectsLabel = new JLabel("0");
+        projectSuccessRateLabel = new JLabel("0%");
 
         // Project performance table
-        String[] projectColumns = { "Project Name", "Goal", "Raised", "Progress %", "Pledges", "Success", "Rejected",
+        String[] projectColumns = { "Project Name", "Goal", "Raised", "Progress %", "Status", "Pledges", "Success",
+                "Rejected",
                 "Backers" };
         projectTableModel = new DefaultTableModel(projectColumns, 0) {
             @Override
@@ -123,20 +130,26 @@ public class StatisticsView extends JFrame {
         panel.setBorder(BorderFactory.createTitledBorder("System Overview"));
 
         // Create grid for statistics
-        JPanel statsGrid = new JPanel(new GridLayout(2, 4, 10, 10));
+        JPanel statsGrid = new JPanel(new GridLayout(3, 4, 10, 10));
         statsGrid.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        // Row 1
+        // Row 1 - General Statistics
         statsGrid.add(createStatCard("Total Projects", totalProjectsLabel));
         statsGrid.add(createStatCard("Total Users", totalUsersLabel));
         statsGrid.add(createStatCard("Total Pledges", totalPledgesLabel));
-        statsGrid.add(createStatCard("Success Rate", successRateLabel));
+        statsGrid.add(createStatCard("Pledge Success Rate", successRateLabel));
 
-        // Row 2
+        // Row 2 - Pledge Statistics
         statsGrid.add(createStatCard("Successful Pledges", successfulPledgesLabel));
         statsGrid.add(createStatCard("Rejected Pledges", rejectedPledgesLabel));
         statsGrid.add(createStatCard("Total Raised", totalRaisedLabel));
         statsGrid.add(createStatCard("Average Pledge", averagePledgeLabel));
+
+        // Row 3 - Project Success Statistics
+        statsGrid.add(createStatCard("Successful Projects", successfulProjectsLabel));
+        statsGrid.add(createStatCard("Failed Projects", failedProjectsLabel));
+        statsGrid.add(createStatCard("Project Success Rate", projectSuccessRateLabel));
+        statsGrid.add(new JLabel()); // Empty cell
 
         panel.add(statsGrid, BorderLayout.CENTER);
         return panel;
@@ -204,7 +217,12 @@ public class StatisticsView extends JFrame {
         averagePledgeLabel.setText(String.format("$%.2f", stats.getAveragePledgeAmount()));
         successRateLabel.setText(String.format("%.1f%%", stats.getSuccessRate()));
 
-        // Color code success rate
+        // New project success statistics
+        successfulProjectsLabel.setText(String.valueOf(stats.getSuccessfulProjects()));
+        failedProjectsLabel.setText(String.valueOf(stats.getFailedProjects()));
+        projectSuccessRateLabel.setText(String.format("%.1f%%", stats.getProjectSuccessRate()));
+
+        // Color code success rates
         if (stats.getSuccessRate() >= 80) {
             successRateLabel.setForeground(Color.GREEN);
         } else if (stats.getSuccessRate() >= 60) {
@@ -212,6 +230,19 @@ public class StatisticsView extends JFrame {
         } else {
             successRateLabel.setForeground(Color.RED);
         }
+
+        // Color code project success rate
+        if (stats.getProjectSuccessRate() >= 70) {
+            projectSuccessRateLabel.setForeground(Color.GREEN);
+        } else if (stats.getProjectSuccessRate() >= 50) {
+            projectSuccessRateLabel.setForeground(Color.ORANGE);
+        } else {
+            projectSuccessRateLabel.setForeground(Color.RED);
+        }
+
+        // Color code successful/failed projects
+        successfulProjectsLabel.setForeground(Color.GREEN);
+        failedProjectsLabel.setForeground(Color.RED);
     }
 
     private void updateProjectPerformanceTable() {
@@ -224,6 +255,7 @@ public class StatisticsView extends JFrame {
                     String.format("$%.2f", perf.getProject().getGoalAmount()),
                     String.format("$%.2f", perf.getTotalRaised()),
                     String.format("%.1f%%", perf.getFundingPercentage()),
+                    perf.getProject().getStatusDescription(), // Add status
                     perf.getTotalPledges(),
                     perf.getSuccessfulPledges(),
                     perf.getRejectedPledges(),

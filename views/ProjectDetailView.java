@@ -199,14 +199,33 @@ public class ProjectDetailView extends JFrame {
         progressBar.setValue(progress);
         progressBar.setString(progress + "%");
 
-        if (currentProject.isActive()) {
+        // Display status based on project success
+        String projectStatus = currentProject.getProjectStatus();
+        String statusDescription = currentProject.getStatusDescription();
+
+        if (projectStatus.equals("SUCCESS")) {
+            // Project successful
+            statusLabel.setText("Status: " + statusDescription);
+            statusLabel.setForeground(new Color(0, 150, 0)); // Dark green
+
+            if (currentProject.isActive()) {
+                daysLeftLabel.setText(
+                        String.format("Days remaining: %d (Goal reached!)", currentProject.getDaysRemaining()));
+                pledgeButton.setEnabled(true); // Can still pledge
+            } else {
+                daysLeftLabel.setText("Project completed successfully");
+                pledgeButton.setEnabled(false);
+            }
+        } else if (currentProject.isActive()) {
+            // Project still fundraising
             daysLeftLabel.setText(String.format("Days remaining: %d", currentProject.getDaysRemaining()));
-            statusLabel.setText("Status: Active");
-            statusLabel.setForeground(Color.GREEN);
+            statusLabel.setText("Status: " + statusDescription);
+            statusLabel.setForeground(Color.BLUE);
             pledgeButton.setEnabled(true);
         } else {
+            // Project deadline passed without reaching goal
             daysLeftLabel.setText("Project ended");
-            statusLabel.setText("Status: Completed");
+            statusLabel.setText("Status: " + statusDescription);
             statusLabel.setForeground(Color.RED);
             pledgeButton.setEnabled(false);
         }

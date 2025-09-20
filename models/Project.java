@@ -61,6 +61,37 @@ public class Project {
         return LocalDate.now().isBefore(deadline) || LocalDate.now().equals(deadline);
     }
 
+    // Check if project has reached its funding goal
+    public boolean isFundingGoalReached() {
+        return currentAmount >= goalAmount;
+    }
+
+    // Get project status string
+    public String getProjectStatus() {
+        if (isFundingGoalReached()) {
+            return "SUCCESS"; // Goal reached
+        } else if (isActive()) {
+            return "ACTIVE"; // Currently fundraising
+        } else {
+            return "FAILED"; // Deadline passed without reaching goal
+        }
+    }
+
+    // Get detailed status description
+    public String getStatusDescription() {
+        if (isFundingGoalReached()) {
+            if (isActive()) {
+                return "Goal Reached (Still Accepting Pledges)";
+            } else {
+                return "Project Successful";
+            }
+        } else if (isActive()) {
+            return "Active Fundraising";
+        } else {
+            return "Project Failed";
+        }
+    }
+
     // Days remaining until deadline
     public long getDaysRemaining() {
         if (!isActive())

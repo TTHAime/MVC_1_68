@@ -205,7 +205,7 @@ public class ProjectListView extends JFrame {
                     String.format("$%.2f", project.getCurrentAmount()),
                     String.format("%.1f%%", project.getFundingProgress()),
                     project.isActive() ? String.valueOf(project.getDaysRemaining()) : "Ended",
-                    project.isActive() ? "Active" : "Completed"
+                    project.getStatusDescription() // Display detailed status
             };
             tableModel.addRow(row);
         }

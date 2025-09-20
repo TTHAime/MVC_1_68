@@ -6,5 +6,5 @@ projectId,name,goalAmount,deadline,currentAmount,categoryId,description,creatorI
 56789012,Fitness Tracker App,30000.0,2025-12-15,19800.0,CAT005,Mobile app that tracks workouts and provides personalized fitness recommendations using AI.,U008
 67890123,Digital Art Studio,40000.0,2025-11-30,12970.5,CAT002,Creating a digital art creation tool that makes professional art accessible to everyone.,U009
 78901234,Educational Robot Kit,60000.0,2026-01-31,45230.75,CAT004,STEM education robot kits for schools to teach programming and robotics to students.,U010
-89012345,Eco-Friendly Water Bottle,15000.0,2025-10-15,14250.25,CAT005,Sustainable water bottles made from recycled materials with temperature monitoring technology.,U011
+89012345,Eco-Friendly Water Bottle,15000.0,2025-10-15,24330.25,CAT005,Sustainable water bottles made from recycled materials with temperature monitoring technology.,U011
 90123456,Indie Game Development,35000.0,2025-12-01,8770.0,CAT003,Funding for an indie adventure game with hand-drawn artwork and original soundtrack.,U002
