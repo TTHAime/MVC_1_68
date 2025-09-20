@@ -1,9 +1,5 @@
 # Crowdfunding System - MVC Architecture
 
-## Overview
-
-This is a simple crowdfunding system built using Java Swing with MVC (Model-View-Controller) architecture pattern. The system uses CSV files for data storage and implements all the required business rules for crowdfunding projects.
-
 ## Features
 
 - User authentication (simple login system)

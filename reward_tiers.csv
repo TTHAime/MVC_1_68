@@ -1,28 +1,28 @@
 tierId,projectId,name,minimumAmount,totalQuantity,remainingQuantity,description
-T001,12345678,Early Bird Special,100.00,100,45,Get the Smart Home Assistant at a discounted price plus exclusive early access.
-T002,12345678,Standard Package,150.00,200,120,Smart Home Assistant with standard accessories and 1-year warranty.
-T003,12345678,Premium Package,250.00,50,25,Premium package with additional sensors and 2-year warranty.
-T004,23456789,Basic Workshop Access,50.00,30,12,Access to pottery workshop for 4 sessions including materials.
-T005,23456789,Complete Course,120.00,20,8,Full pottery course with 12 sessions and take-home kit.
-T006,23456789,Master Class,200.00,10,5,Master class with professional potter plus personalized guidance.
-T007,34567890,Digital Copy,25.00,500,380,Digital version of the board game for tablet/phone play.
-T008,34567890,Physical Game,60.00,300,195,Physical board game with premium components and game mat.
-T009,34567890,Collector's Edition,150.00,100,72,Limited collector's edition with metal pieces and art book.
-T010,45678901,Student Access,75.00,1000,650,6-month access to learning platform with basic courses.
-T011,45678901,Premium Learning,200.00,500,280,1-year premium access with mentorship and certificates.
-T012,45678901,Lifetime Access,500.00,100,45,Lifetime access to all courses including future content.
-T013,56789012,Basic App,15.00,1000,720,Fitness tracker app with basic features for 1 year.
-T014,56789012,Pro Features,40.00,500,285,Pro version with advanced analytics and meal planning.
-T015,56789012,Personal Trainer,100.00,100,42,Pro features plus virtual personal trainer sessions.
-T016,67890123,Software License,80.00,300,180,Digital art software license with basic brush packs.
-T017,67890123,Complete Suite,150.00,200,95,Complete software suite with premium brushes and tutorials.
-T018,67890123,Artist Package,300.00,50,28,Complete suite plus digital art tablet and workshops.
-T019,78901234,Basic Kit,120.00,200,85,Basic robot kit with simple programming challenges.
-T020,78901234,Advanced Kit,250.00,150,72,Advanced kit with sensors and complex programming projects.
-T021,78901234,Classroom Set,800.00,20,12,Complete classroom set for 30 students with teacher resources.
-T022,89012345,Single Bottle,25.00,500,245,Eco-friendly water bottle with temperature display.
-T023,89012345,Family Pack,80.00,200,125,Set of 4 bottles in different colors for the whole family.
-T024,89012345,Corporate Pack,200.00,50,35,Corporate package with custom branding and bulk pricing.
-T025,90123456,Game Download,20.00,1000,850,Digital download of the completed indie game.
-T026,90123456,Deluxe Edition,45.00,300,240,Game plus soundtrack and digital art book.
-T027,90123456,Developer Pack,100.00,100,78,Deluxe edition plus behind-the-scenes content and credits.
+T001,12345678,Early Bird Special,100.0,100,45,Get the Smart Home Assistant at a discounted price plus exclusive early access.
+T002,12345678,Standard Package,150.0,200,120,Smart Home Assistant with standard accessories and 1-year warranty.
+T003,12345678,Premium Package,250.0,50,25,Premium package with additional sensors and 2-year warranty.
+T004,23456789,Basic Workshop Access,50.0,30,12,Access to pottery workshop for 4 sessions including materials.
+T005,23456789,Complete Course,120.0,20,8,Full pottery course with 12 sessions and take-home kit.
+T006,23456789,Master Class,200.0,10,5,Master class with professional potter plus personalized guidance.
+T007,34567890,Digital Copy,25.0,500,380,Digital version of the board game for tablet/phone play.
+T008,34567890,Physical Game,60.0,300,195,Physical board game with premium components and game mat.
+T009,34567890,Collector's Edition,150.0,100,72,Limited collector's edition with metal pieces and art book.
+T010,45678901,Student Access,75.0,1000,650,6-month access to learning platform with basic courses.
+T011,45678901,Premium Learning,200.0,500,280,1-year premium access with mentorship and certificates.
+T012,45678901,Lifetime Access,500.0,100,45,Lifetime access to all courses including future content.
+T013,56789012,Basic App,15.0,1000,720,Fitness tracker app with basic features for 1 year.
+T014,56789012,Pro Features,40.0,500,285,Pro version with advanced analytics and meal planning.
+T015,56789012,Personal Trainer,100.0,100,42,Pro features plus virtual personal trainer sessions.
+T016,67890123,Software License,80.0,300,179,Digital art software license with basic brush packs.
+T017,67890123,Complete Suite,150.0,200,95,Complete software suite with premium brushes and tutorials.
+T018,67890123,Artist Package,300.0,50,28,Complete suite plus digital art tablet and workshops.
+T019,78901234,Basic Kit,120.0,200,85,Basic robot kit with simple programming challenges.
+T020,78901234,Advanced Kit,250.0,150,72,Advanced kit with sensors and complex programming projects.
+T021,78901234,Classroom Set,800.0,20,12,Complete classroom set for 30 students with teacher resources.
+T022,89012345,Single Bottle,25.0,500,245,Eco-friendly water bottle with temperature display.
+T023,89012345,Family Pack,80.0,200,125,Set of 4 bottles in different colors for the whole family.
+T024,89012345,Corporate Pack,200.0,50,35,Corporate package with custom branding and bulk pricing.
+T025,90123456,Game Download,20.0,1000,850,Digital download of the completed indie game.
+T026,90123456,Deluxe Edition,45.0,300,240,Game plus soundtrack and digital art book.
+T027,90123456,Developer Pack,100.0,100,78,Deluxe edition plus behind-the-scenes content and credits.
