@@ -1,0 +1,13 @@
+userId,username,email,password
+U001,admin,admin@crowdfund.com,admin
+U002,user1,john.doe@email.com,password
+U003,user2,jane.smith@email.com,password
+U004,alice_cooper,alice@email.com,password123
+U005,bob_builder,bob@email.com,build123
+U006,charlie_brown,charlie@email.com,charlie
+U007,diana_prince,diana@email.com,wonder
+U008,edward_stark,edward@email.com,stark123
+U009,fiona_apple,fiona@email.com,apple
+U010,george_martin,george@email.com,martin
+U011,helen_troy,helen@email.com,troy123
+U012,ivan_terrible,ivan@email.com,terrible
